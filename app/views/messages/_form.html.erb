@@ -1,0 +1,19 @@
+<div class='container'>
+  <%= link_to sanitize("&larr; Back to Messages"), messages_path %>
+  <div class="card mb-2 mt-3">
+    <div class="card-body">
+      <%= simple_form_for message, html: { class: "form-inline mt-3 mb-3" }  do |f| %>
+        <% if message.errors.any? %>
+          <div class="error-message">
+            <%= message.errors.full_messages.to_sentence.capitalize %>
+          </div>
+        <% end %>
+        <div class="form-group mb-2">
+          <%= f.input :body, wrapper: false, autofocus: true, label: 'Body', input_html: { class: 'form-control mb-3' } %>
+        </div>
+        <%= f.submit "Save", class: "btn btn-outline-dark mb-2" %>
+        <%= link_to "Cancel", messages_path, class: "btn btn-light mb-2 mr-2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
