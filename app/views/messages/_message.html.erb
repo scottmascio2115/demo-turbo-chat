@@ -3,17 +3,19 @@
     <span style="color: gray;"><%= message.created_at.strftime("%I:%M%p")  %></span>
   </div>
   <div class="d-inline-block">
-    <strong style="color: <%= message.user.text_color %>;"><%= message.user.email %></strong>
+    <strong style="color: <%= message.user.text_color %>;"><%= message.user.name %></strong>
   </div>
   <div class="d-inline-block">
     <p><%= message.body %></p>
   </div>
 </div>
 
-<div class="d-inline-block">
-  <%= link_to "Edit", edit_message_path(message), class: "btn btn-light" %>
-</div>
+<% if should_show_edit_and_delete %>
+  <div class="d-inline-block">
+    <%= link_to "Edit", edit_message_path(message), class: "btn btn-light" %>
+  </div>
 
-<div class="d-inline-block">
-  <%= button_to "Delete", message_path(message), method: :delete, class: "btn btn-light" %>
-</div>
+  <div class="d-inline-block">
+    <%= button_to "Delete", message_path(message), method: :delete, class: "btn btn-light" %>
+  </div>
+<% end %>
