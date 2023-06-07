@@ -1,1 +1,8 @@
-<%= render "form", message: @message %>
+<%= turbo_frame_tag dom_id(@message) do %>
+  <%= render "form", message: @message %>
+<% end %>
+
+<%# 1. Upon clicking the "Edit" button, Turbo captures the submit event due to the form being nested within a Turbo Frame.
+<%# 2. After validating the form submission on the controller side, the controller redirects to the Messages#index page.
+<%# 3. The updated Messages#index page features a Turbo Frame with the same id, which displays a card showcasing the updated message name.
+<%# 4. Turbo seamlessly replaces the frame's content, substituting the form with the refreshed message card.
