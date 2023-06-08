@@ -36,7 +36,11 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy
-    redirect_to messages_path, notice: "Message was successfully destroyed."
+
+    respond_to do |format|
+      format.html { redirect_to messages_path, notice: "Message was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private
