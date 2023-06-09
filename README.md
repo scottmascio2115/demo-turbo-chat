@@ -1,3 +1,13 @@
+## What will we build
+We will convert a multi-page chat app into a single page app in 6 steps with __no Javascript__
+
+- [Part 1 - New Message With Turbo Frame](https://github.com/scottmascio2115/demo-turbo-chat/pull/3)
+- [Part 2 - Edit Using Turbo Frame](https://github.com/scottmascio2115/demo-turbo-chat/pull/4)
+- [Part 3 - Delete Using Turbo Streams](https://github.com/scottmascio2115/demo-turbo-chat/pull/5)
+- [Part 4 - New Message With Turbo Streams](https://github.com/scottmascio2115/demo-turbo-chat/pull/6)
+- [Part 5 - Create Messages With Turbo Streams and Action Cable](https://github.com/scottmascio2115/demo-turbo-chat/pull/7)
+- [Part 6 - Add and Remove Logged in/out Users](https://github.com/scottmascio2115/demo-turbo-chat/pull/8)
+
 ## Why was this project created?
 This is the starter project for the Turbo Rails internal conference talk at CMM.
 
@@ -5,6 +15,7 @@ We will convert this project from a CRUD application to a single page applicatio
 
 ## How to follow along
 In the top right section of the GitHub repo you can fork the project and follow along during the talk.
+
 
 ## How this project was created
 rails new demo-turbo-chat --css=bootstrap --javascript=esbuild --database=postgresql
