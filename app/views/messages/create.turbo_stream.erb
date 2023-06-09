@@ -1,0 +1,2 @@
+<%= turbo_stream.append "messages", partial: "messages/message", locals: { message: @message } %>
+<%= turbo_stream.update 'new_message', partial: "messages/new_button" %>
