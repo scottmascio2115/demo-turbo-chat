@@ -8,6 +8,8 @@ We will convert a multi-page chat app into a single page app in 6 steps with __n
 - [Part 5 - Create Messages With Turbo Streams and Action Cable](https://github.com/scottmascio2115/demo-turbo-chat/pull/7)
 - [Part 6 - Add and Remove Logged in/out Users](https://github.com/scottmascio2115/demo-turbo-chat/pull/8)
 
+For parts 5 and 6 you will need to have Redis installed and running.
+
 ## Why was this project created?
 This is the starter project for the Turbo Rails internal conference talk at CMM.
 
