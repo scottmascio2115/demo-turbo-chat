@@ -13,6 +13,7 @@
       <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn btn-outline-info btn-sm mt-2" %>
     </div>
     <div class="col-md-9">
+      <%= turbo_stream_from "messages_stream" %>
       <div class="card" style="height: 85vh; overflow: scroll;">
         <div class="card-body">
           <h5 class="card-title">Messages</h5>
