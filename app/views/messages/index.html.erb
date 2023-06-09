@@ -17,21 +17,18 @@
         <div class="card-body">
           <h5 class="card-title">Messages</h5>
           <hr>
-          <%= render @messages %>
+          <div id="messages">
+            <%= render @messages %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div>
-  <div class="row">
-    <div class="col-md-3">
-    </div>
-      <div class="col-md-9">
-        <%= turbo_frame_tag "new_message" do %>
-          <%= link_to "New Message", new_message_path, class: "btn btn-outline-primary" %>
-        <% end %>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-9">
+    <%= render "new_button" %>
   </div>
 </div>

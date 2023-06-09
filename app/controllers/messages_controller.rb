@@ -17,7 +17,10 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params.merge({user_id: current_user.id}))
 
     if @message.save
-      redirect_to messages_path, notice: "Message was successfully created."
+      respond_to do |format|
+        format.html { redirect_to messages_path, notice: "Message was successfully created." }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
