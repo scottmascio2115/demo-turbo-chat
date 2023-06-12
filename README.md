@@ -32,8 +32,14 @@ rails new demo-turbo-chat --css=bootstrap --javascript=esbuild --database=postgr
 1.4.0
 
 ## How To Set Up Project
+### With docker (recommended)
++ `docker-compose build`
++ `docker-compose up`
++ visit http://localhost:3000
+### Local
 + Bundle Install
 + bin/setup to install dependencies
++ Set envars for `REDIS_URL` (see `config/cable.yml`), and `POSTGRES_HOST`, `POSTGRES_USER`, `POSTGRES_PASSWORD` (see `config/database.yml`)
 + bin/dev to start rails server, precompile CSS and JS
 + Visit http://localhost:3000
 
