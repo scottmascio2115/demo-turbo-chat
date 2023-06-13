@@ -1,0 +1,44 @@
+version: "3.6"
+
+# `docker-compose build` to build the containers.
+# `docker-compose up` to run them
+
+services:
+  web:
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && /app/bin/dev"
+    restart: always
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    ports:
+      - "3000:3000"
+    links:
+      - "postgres"
+      - "redis"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+  postgres:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    ports:
+      - "5432"
+  redis:
+    image: redis:latest
+    restart: always
+    volumes:
+      - "redis:/data"
+    ports:
+      - "6379"
+
+volumes:
+  redis:
+  postgres:
